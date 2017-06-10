@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>cakes</display-name>
+  
+  <filter>
+	<filter-name>enCodingFilter</filter-name>
+	<filter-class>cakes.filter.EnCodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>enCodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+	<filter-name>adminFilter</filter-name>
+	<filter-class>cakes.filter.AdminFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>adminFilter</filter-name>
+	<url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
+  
+    <filter>
+	<filter-name>usersFilter</filter-name>
+	<filter-class>cakes.filter.UsersFilter</filter-class>
+  </filter>
+  <filter-mapping>
+	<filter-name>usersFilter</filter-name>
+	<url-pattern>/users/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+		<filter-name>usersFilter</filter-name>
+		<url-pattern>/ForderSer</url-pattern>
+	</filter-mapping>
+  
+  <listener>
+	<listener-class>cakes.util.ConextListener</listener-class>
+  </listener>
+  
+  
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AccountSer</servlet-name>
+    <servlet-class>cakes.ser.AccountSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CategorySer</servlet-name>
+    <servlet-class>cakes.ser.CategorySer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsSer</servlet-name>
+    <servlet-class>cakes.ser.GoodsSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UsersSer</servlet-name>
+    <servlet-class>cakes.ser.UsersSer</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ForderSer</servlet-name>
+    <servlet-class>cakes.ser.ForderSer</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AccountSer</servlet-name>
+    <url-pattern>/AccountSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CategorySer</servlet-name>
+    <url-pattern>/CategorySer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsSer</servlet-name>
+    <url-pattern>/GoodsSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersSer</servlet-name>
+    <url-pattern>/UsersSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForderSer</servlet-name>
+    <url-pattern>/ForderSer</url-pattern>
+  </servlet-mapping>
+  <error-page>
+	<error-code>404</error-code>
+	<location>/error.jsp</location>
+  </error-page>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
